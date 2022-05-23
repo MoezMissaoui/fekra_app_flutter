@@ -1,4 +1,5 @@
 import 'package:fekra_app/SplashScreen.dart';
+import 'package:fekra_app/helpers/template.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // change status bar color
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.blue,
+      statusBarColor: statusBarColor,
     ));
     return GestureDetector(
       // on tape hide keyboard
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         title: 'FEKRA',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: primarySwatch,
         ),
         home: const SplashScreen(
           connected: _connected,
