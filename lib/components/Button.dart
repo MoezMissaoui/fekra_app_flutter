@@ -36,7 +36,8 @@ class _Button extends State<Button> {
           ),
         ),
       ),
-      onPressed: () => {Navigator.of(context).push(createRoute(widget.link))},
+      onPressed: () =>
+          {Navigator.of(context).push(createRouteFadeAnimation(widget.link))},
       child: Text(
         widget.title,
         style: const TextStyle(

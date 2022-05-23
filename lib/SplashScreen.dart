@@ -23,7 +23,7 @@ class _SplashScreen extends State<SplashScreen> {
     Timer(
       const Duration(seconds: 1),
       () => Navigator.of(context).pushReplacement(
-        createRoute(
+        createRouteFadeAnimation(
             (widget.connected) ? const HomeScreen() : const LoginScreen()),
       ),
     );
@@ -31,20 +31,18 @@ class _SplashScreen extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size ScreenSize = MediaQuery.of(context).size;
-
     return Scaffold(
       body: FadeAnimation(
         delay: 1.0,
         child: Container(
-          width: ScreenSize.width,
+          width: MediaQuery.of(context).size.width,
           decoration: principalBackgroud,
-          child: const Center(
+          child: Center(
             child: Hero(
               tag: "PrincipalLogo",
               child: Image(
                 width: 200,
-                image: AssetImage('images/solution.png'),
+                image: AssetImage(logoUrl),
               ),
             ),
           ),

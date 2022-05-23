@@ -1,3 +1,4 @@
+import 'package:fekra_app/helpers/template.dart';
 import 'package:flutter/material.dart';
 
 class CostumTextFormField extends StatelessWidget {
@@ -6,14 +7,14 @@ class CostumTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.fromLTRB(15, 5, 10, 5),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(5),
           boxShadow: [
             BoxShadow(
-                color: Colors.blue.shade100,
+                color: shadowTextFormField,
                 blurRadius: 1,
                 offset: const Offset(0, 1))
           ]),

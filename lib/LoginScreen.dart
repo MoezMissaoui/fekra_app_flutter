@@ -1,7 +1,8 @@
 import 'package:fekra_app/HomeScreen.dart';
 import 'package:fekra_app/RegisterScreen.dart';
 import 'package:fekra_app/components/Header.dart';
-import 'package:fekra_app/components/TextFormField.dart';
+import 'package:fekra_app/components/Space.dart';
+import 'package:fekra_app/components/CostumTextFormField.dart';
 import 'package:fekra_app/helpers/template.dart';
 import 'package:flutter/material.dart';
 import 'package:fekra_app/animations/fadeanimation.dart';
@@ -26,13 +27,20 @@ class _LoginScreen extends State<LoginScreen> {
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
-              const SizedBox(height: 40),
-              const Header(
+              // Space of height 40
+              Space(spaceHeight: 40),
+
+              // Header with Animation
+              Header(
                 principalTitle: "Login",
                 secondTitle: "Welcome Back",
-                logo: "images/solution.png",
+                logo: logoUrl,
               ),
-              const SizedBox(height: 20),
+
+              // Space of height 20
+              Space(spaceHeight: 20),
+
+              // Body page
               Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
@@ -46,8 +54,10 @@ class _LoginScreen extends State<LoginScreen> {
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      const SizedBox(height: 60),
-                      // Form
+                      // Space of height 60
+                      Space(spaceHeight: 60),
+
+                      // Login Form with Animation
                       FadeAnimation(
                         delay: 1.0,
                         child: Container(
@@ -99,8 +109,8 @@ class _LoginScreen extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      // space 40
-                      const SizedBox(height: 40),
+                      // Space of height 40
+                      Space(spaceHeight: 40),
 
                       // Forget psw ?
                       FadeAnimation(
@@ -129,32 +139,32 @@ class _LoginScreen extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      // space 10
-                      const SizedBox(height: 10),
+
+                      // Space of height 50
+                      Space(spaceHeight: 50),
 
                       // Don't have account ?
                       FadeAnimation(
-                          delay: 1.0,
-                          child: Row(
-                            children: [
-                              const Text(
-                                "Don't have account ?",
-                                style: TextStyle(color: Colors.grey),
+                        delay: 1.0,
+                        child: Row(
+                          children: [
+                            const Text(
+                              "Don't have account ?",
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.of(context).push(
+                                createRouteFadeAnimation(
+                                    const RegisterScreen()),
                               ),
-                              TextButton(
-                                onPressed: () => Navigator.of(context).push(
-                                  createRoute(const RegisterScreen()),
-                                ),
-                                child: const Text(
-                                  "Register",
-                                  style: TextStyle(color: Colors.blue),
-                                ),
+                              child: const Text(
+                                "Register",
+                                style: TextStyle(color: Colors.blue),
                               ),
-                            ],
-                          )),
-
-                      // space 40
-                      const SizedBox(height: 40),
+                            ),
+                          ],
+                        ),
+                      ),
 
                       // Button login
                       const FadeAnimation(

@@ -1,10 +1,9 @@
-import 'dart:ui';
-
 import 'package:fekra_app/HomeScreen.dart';
 import 'package:fekra_app/LoginScreen.dart';
 import 'package:fekra_app/components/Button.dart';
 import 'package:fekra_app/components/Header.dart';
-import 'package:fekra_app/components/TextFormField.dart';
+import 'package:fekra_app/components/Space.dart';
+import 'package:fekra_app/components/CostumTextFormField.dart';
 import 'package:fekra_app/helpers/functions.dart';
 
 import 'package:fekra_app/helpers/template.dart';
@@ -31,22 +30,23 @@ class _RegisterScreen extends State<RegisterScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(height: 40),
+              // Space of height 40
+              Space(spaceHeight: 40),
 
               // Header with Animation
-              const FadeAnimation(
+              FadeAnimation(
                 delay: 1.0,
                 child: Header(
                   principalTitle: 'Rgister',
                   secondTitle: 'Have fun with us',
-                  logo: 'images/solution.png',
+                  logo: logoUrl,
                 ),
               ),
 
-              // Space of 20
-              const SizedBox(height: 20),
+              // Space of height 20
+              Space(spaceHeight: 20),
 
-              // Body
+              // Body page
               Container(
                 decoration: const BoxDecoration(
                     color: Colors.white,
@@ -57,9 +57,10 @@ class _RegisterScreen extends State<RegisterScreen> {
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     children: <Widget>[
-                      // space 60
-                      const SizedBox(height: 60),
-                      // Form with Animation
+                      // Space of height 60
+                      Space(spaceHeight: 60),
+
+                      // Register Form with Animation
                       FadeAnimation(
                         delay: 1.0,
                         child: Container(
@@ -157,8 +158,8 @@ class _RegisterScreen extends State<RegisterScreen> {
                         ),
                       ),
 
-                      // space 40
-                      const SizedBox(height: 40),
+                      // Space of height 40
+                      Space(spaceHeight: 40),
 
                       // Already have account ? with Animation
                       FadeAnimation(
@@ -171,7 +172,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                             ),
                             TextButton(
                               onPressed: () => Navigator.of(context).push(
-                                createRoute(const LoginScreen()),
+                                createRouteFadeAnimation(const LoginScreen()),
                               ),
                               child: const Text(
                                 "Login",

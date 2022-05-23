@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 
 // statusBarColor Color
-const Color statusBarColor = Colors.teal;
+const principalColor = Colors.deepPurple;
+
+// statusBarColor Color
+const statusBarColor = principalColor;
 // primarySwatch Color
-const primarySwatch = Colors.teal;
+const primarySwatch = principalColor;
 // Principal Background decoration
 BoxDecoration principalBackgroud = BoxDecoration(
   gradient: LinearGradient(
     begin: Alignment.topCenter,
     colors: [
-      Colors.teal.shade500,
-      Colors.teal.shade200,
+      principalColor.shade500,
+      principalColor.shade200,
     ],
   ),
 );
 // Principal button decoration
-Color principalBackgroundColorButton = Colors.teal.shade500;
-Color principalShadowColorButton = Colors.grey.shade50;
+Color principalBackgroundColorButton = principalColor.shade500;
+Color principalShadowColorButton = principalColor.shade50;
 // Principal shadow colors
-Color shadowTextFormField = Colors.grey.shade100;
-Color shadowBoxForm = Colors.grey.shade50;
+Color shadowTextFormField = principalColor.shade100;
+Color shadowBoxForm = principalColor.shade50;
 
 String logoUrl = "images/solution.png";

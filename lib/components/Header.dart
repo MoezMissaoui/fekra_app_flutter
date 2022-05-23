@@ -19,10 +19,8 @@ class Header extends StatefulWidget {
 class _Header extends State<Header> {
   @override
   Widget build(BuildContext context) {
-    Size ScreenSize = MediaQuery.of(context).size;
-
-    return Container(
-      width: double.infinity,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Row(
